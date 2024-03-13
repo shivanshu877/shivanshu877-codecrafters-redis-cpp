@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
   
 
   int client_fd = accept(server_fd, (struct sockaddr *) &client_addr, (socklen_t *) &client_addr_len);
- const char *response ="+PONG\r\n";
+ const char * pong ="+PONG\r\n";
 
 char buffer[1024];
   while (recv(client_fd, buffer, sizeof(buffer), 0)) {
