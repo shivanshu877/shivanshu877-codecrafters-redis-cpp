@@ -46,7 +46,6 @@ int main(int argc, char **argv) {
   struct sockaddr_in client_addr;
   int client_addr_len = sizeof(client_addr);
   
-  std::cout << "Waiting for a client to connect...\n";
 
   int client_fd = accept(server_fd, (struct sockaddr *) &client_addr, (socklen_t *) &client_addr_len);
  const char *response ="+PONG\r\n";
@@ -54,7 +53,6 @@ int main(int argc, char **argv) {
 char buffer[1024];
   while (recv(client_fd, buffer, sizeof(buffer), 0)) {
     send(client_fd, pong.c_str(), pong.length(), 0);
-
   }
   
   close(client_fd); 
