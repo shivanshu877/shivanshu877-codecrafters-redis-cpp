@@ -46,9 +46,10 @@ int main(int argc, char **argv) {
   struct sockaddr_in client_addr;
   int client_addr_len = sizeof(client_addr);
   
+const char* CRLF = "\r\n";
 
   int client_fd = accept(server_fd, (struct sockaddr *) &client_addr, (socklen_t *) &client_addr_len);
-  std::string pong = "+PONG" + CRLF;
+std::string pong = "+PONG" + std::string(CRLF);
 
 char buffer[1024];
   while (recv(client_fd, buffer, sizeof(buffer), 0)) {
