@@ -29,7 +29,7 @@ void handleClient(int clientSocket) {
     while(recv(clientSocket, buffer, sizeof(buffer), 0)) {
       send(clientSocket, pong, strlen(pong), 0);
     }
-1
+
   close(clientSocket);
 }
 int main(int argc, char **argv) {
