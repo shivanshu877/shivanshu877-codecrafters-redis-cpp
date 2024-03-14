@@ -12,6 +12,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <pthread.h>
+#include <thread>
 int handleConnect(int server_connect) {
   struct sockaddr_in client_addr;
   int client_addr_len = sizeof(client_addr);
